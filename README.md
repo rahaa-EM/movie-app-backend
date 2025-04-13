@@ -6,7 +6,6 @@ This is the backend server for the Movie App, built with **Node.js + Express + T
 - Node.js
 - TypeScript
 - Express
-- dotenv
 - node-fetch
 - CORS
 
@@ -14,7 +13,7 @@ This is the backend server for the Movie App, built with **Node.js + Express + T
 
 1. **Clone the repo**
     ```bash
-    git clone https://github.com/rahaa-EM/movieDBServer.git
+    git clone https://github.com/rahaa-EM/movie-app-backend.git
     cd movieAppServer
 2. **Install dev dependencies**
     ```bash
