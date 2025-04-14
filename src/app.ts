@@ -20,7 +20,6 @@ app.use("/api/movies", moviesRoute);
 app.use("/api/search", searchRoute);
 app.use("/api/tv-shows", tvShowsRoute);
 
-
 // Error handler
 app.use(
   (
@@ -33,7 +32,7 @@ app.use(
     res.status(500).json({ success: false, message: "Server error" });
   }
 );
-
 app.listen(port, () => {
   console.log(`🚀 Server running at http://localhost:${port}`);
 });
+export default app;

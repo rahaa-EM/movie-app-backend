@@ -1,4 +1,4 @@
-export interface Movie {
+export type Movie = {
   adult: boolean;
   backdrop_path: string;
   genre_ids: number[];
@@ -8,7 +8,8 @@ export interface Movie {
   overview: string;
   popularity: number;
   poster_path: string;
-  release_date: string;
+  release_date?: string;
+  first_air_date?: string;
   title: string;
   video: boolean;
   vote_average: number;

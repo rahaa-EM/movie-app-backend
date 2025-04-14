@@ -26,9 +26,10 @@ export const searchMovies = async (
   next: NextFunction
 ) => {
   const query = req.query.q;
+  const type = req.query.type || "multi";
   try {
     const data = await fetchFromTMDB(
-      `/search/movie?query=${encodeURIComponent(
+      `/search/${type}?query=${encodeURIComponent(
         query as string
       )}&include_adult=true&language=en-US&page=1`
     );
