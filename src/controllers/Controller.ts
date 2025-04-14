@@ -1,10 +1,10 @@
-// This file is part of the Movie App project.
 import { Request, Response, NextFunction } from "express";
 import { fetchFromTMDB } from "../services/tmdbService.js";
 import { Movie } from "../types/types.js";
 type TMDBResponse = {
   results: Movie[];
 };
+// Get allpopular movies for the homepage
 export const getPopularMovies = async (
   req: Request,
   res: Response,
@@ -19,7 +19,7 @@ export const getPopularMovies = async (
     next(err);
   }
 };
-
+// Search movies/tv shows by title
 export const searchMovies = async (
   req: Request,
   res: Response,
@@ -38,7 +38,24 @@ export const searchMovies = async (
   }
 };
 
-export const getTopRatedMovie = async (
+// Get all top-rated tv-shows
+export const getTopRatedTV = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  try {
+    const data = (await fetchFromTMDB(
+      "/tv/top_rated?page=1&language=en-US"
+    )) as TMDBResponse;
+    res.json(data.results);
+  } catch (err) {
+    next(err);
+  }
+};
+
+// Get all top-rated movies
+export const getTopRatedMovies = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -47,7 +64,7 @@ export const getTopRatedMovie = async (
     const data = (await fetchFromTMDB(
       "/movie/top_rated?page=1&language=en-US"
     )) as TMDBResponse;
-    res.json(data.results[0]);
+    res.json(data.results);
   } catch (err) {
     next(err);
   }

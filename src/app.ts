@@ -1,7 +1,10 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import moviesRoutes from "./routes/moviesRoutes.js";
+import topMoviesRoute from "./routes/topMoviesRoute.js";
+import searchRoute from "./routes/searchRoute.js";
+import moviesRoute from "./routes/moviesRoute.js";
+import tvShowsRoute from "./routes/tvshowsRoute.js";
 
 dotenv.config();
 
@@ -12,7 +15,11 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
-app.use("/api/movies", moviesRoutes);
+app.use("/api/top-movies", topMoviesRoute);
+app.use("/api/movies", moviesRoute);
+app.use("/api/search", searchRoute);
+app.use("/api/tv-shows", tvShowsRoute);
+
 
 // Error handler
 app.use(
