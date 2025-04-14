@@ -1,20 +1,18 @@
-# Movie App Server (TMDB API Wrapper)
+# Movie App Server (TMDB API)
 
-This is the backend server for the Movie App, built with **Node.js + Express + TypeScript**. It connects to **The Movie Database (TMDB)** API and exposes custom endpoints for the frontend to use.
+This is the backend server for the [Movie App](https://github.com/rahaa-EM/movie-app-frontend), built with **Node.js + Express + TypeScript**. It connects to **[The Movie Database (TMDB)](https://www.themoviedb.org/?language=en-CA)** API and exposes custom endpoints for the frontend to use.
 
 ## Tech Stack
 - Node.js
 - TypeScript
 - Express
-- node-fetch
-- CORS
 
 ## Setup Instructions
 
 1. **Clone the repo**
     ```bash
     git clone https://github.com/rahaa-EM/movie-app-backend.git
-    cd movieAppServer
+    cd movie-app-backend
 2. **Install dev dependencies**
     ```bash
     npm install

@@ -1,4 +1,4 @@
-import express from "express";
+import express, { Request, Response, NextFunction }from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import topMoviesRoute from "./routes/topMoviesRoute.js";
@@ -24,15 +24,15 @@ app.use("/api/tv-shows", tvShowsRoute);
 app.use(
   (
     err: any,
-    req: express.Request,
-    res: express.Response,
-    next: express.NextFunction
+    req: Request,
+    res: Response,
+    next: NextFunction
   ) => {
     console.error("Error:", err.message);
     res.status(500).json({ success: false, message: "Server error" });
   }
 );
 app.listen(port, () => {
-  console.log(`🚀 Server running at http://localhost:${port}`);
+  console.log(`Server running at http://localhost:${port}`);
 });
 export default app;

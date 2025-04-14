@@ -1,4 +1,4 @@
-// Description: This file contains the function to fetch data from the TMDB API.
+// This file contains the function to fetch data from the TMDB API.
 import fetch from "node-fetch";
 import { TMDB_API_BASE, TMDB_BEARER_TOKEN } from "../config/tmdbConfig.js";
 
